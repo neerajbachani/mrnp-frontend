@@ -18,9 +18,9 @@ export default function FAQs({ faqs }: FAQsProps) {
     <section className="bg-white flex justify-center items-start py-10 md:py-14 lg:py-20">
       <Container className="flex flex-col items-center">
         <div className="text-center">
-          <Heading>Frequently Asked Questions</Heading>
+          <Heading style=" xl:text-5xl" >Frequently Asked Questions</Heading>
         </div>
-        <div className="py-8 md:py-12 lg:py-16 w-full">
+        <div className="py-8 md:py-12 lg:py-16 w-full ">
           {faqs.map((faq, index) => (
             <div key={index}>
               <div
@@ -33,12 +33,12 @@ export default function FAQs({ faqs }: FAQsProps) {
                 key={index}
                 className={`flex justify-between items-center px-5 py-5 lg:py-8 lg:px-5 w-full  border-[#CDD4DB] cursor-pointer ${
                   activeFaq === index
-                    ? "bg-offWhite border-[1px]"
+                    ? "bg-[#F2F5F1] border-[1px]"
                     : "bg-white border-b-[1px]"
                 }`}
               >
                 <p
-                  className={`${fonts.inter} text-sm md:text-lg lg:text-xl text-primaryBlue`}
+                  className={`${fonts.instrument} font-semibold text-sm md:text-lg text-[#13234C]`}
                 >
                   {faq.question}
                 </p>
@@ -82,7 +82,7 @@ export default function FAQs({ faqs }: FAQsProps) {
                         },
                       },
                     }}
-                    className="bg-offWhite border border-[#CDD4DB] border-t-0 overflow-hidden"
+                    className="bg-[#F2F5F1] border border-[#CDD4DB] border-t-0 overflow-hidden"
                   >
                     <motion.p
                       initial={{ opacity: 0, y: -10 }}
@@ -103,7 +103,7 @@ export default function FAQs({ faqs }: FAQsProps) {
                           ease: "easeIn",
                         },
                       }}
-                      className={`${fonts.inter}  px-5 py-5 text-[#191919] text-sm md:text-base lg:text-lg`}
+                      className={`${fonts.instrument}  px-5 py-5 text-[#13234C] text-sm md:text-base `}
                     >
                       {faq.answer}
                     </motion.p>

@@ -13,7 +13,7 @@ export default function Footer({ navitems }: FooterProps) {
   return (
     <footer className="bg-primaryBlue flex justify-center items-center">
       <Container className="flex flex-col justify-center items-center py-8 md:py-9 lg:py-[42px] ">
-        <div className="w-full space-y-12 lg:space-x-12 lg:space-y-0 flex flex-col lg:flex-row justify-between items-start py-6">
+        <div className="w-full space-y-12 lg:space-x-20 lg:space-y-0 flex flex-col lg:flex-row justify-between items-start py-6">
           <div>
             <Image
               src={"/Logo_Footer.png"}
@@ -22,7 +22,7 @@ export default function Footer({ navitems }: FooterProps) {
               height={300}
             />
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 space-y-6 lg:space-y-0">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 xl:gap-12">
             <div className="space-y-2 lg:space-y-4">
               <p className={`${fonts.inter} text-lg text-[#c8c8c8] font-bold`}>
                 Company

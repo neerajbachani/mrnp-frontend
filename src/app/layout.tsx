@@ -5,7 +5,7 @@ import HelpBanner from "@/components/HelpBanner";
 import Footer from "@/components/Footer";
 import DisclaimerModal from "@/components/DisclaimerModal";
 import { navitems } from "@/constants/Navigation";
-import { fetchAllResources, fetchAllServices } from "@/lib/api";
+import { fetchAllServices } from "@/lib/api";
 
 export const metadata: Metadata = {
   title: "MRNP & CO LLP | Chartered Accountants | Audit, Tax & Advisory",
@@ -64,26 +64,25 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const services = await fetchAllServices();
-  const resources = await fetchAllResources();
+  // const resources = await fetchAllResources();
 
   const servicesSubmenu = services?.map((service) => ({
     name: service.name,
     href: service.slug,
   }));
 
-  const resourcesSubmenu = resources?.map((resource) => ({
-    name: resource.name,
-    href: `/resources/${resource.slug}`,
-  }));
+  // const resourcesSubmenu = resources?.map((resource) => ({
+  //   name: resource.name,
+  //   href: `/resources/${resource.slug}`,
+  // }));
 
   navitems.find((item) => item.name === "Services")!.submenu = servicesSubmenu;
-  navitems.find((item) => item.name === "Resources")!.submenu =
-    resourcesSubmenu;
+  // navitems.find((item) => item.name === "Resources")!.submenu =
+  //   resourcesSubmenu;
 
   return (
     <html lang="en">
       <body>
-        <Navbar navitems={navitems} />
         <DisclaimerModal />
         <main className="">{children}</main>
         <HelpBanner />

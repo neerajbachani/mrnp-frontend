@@ -1,10 +1,10 @@
 import { fonts } from "@/utils/fonts";
-import Container from "./Container";
 import Image from "next/image";
 
 export interface PageIntroProps {
   pageName?: string;
-  pageTitle: string;
+  pageTitle?: string;
+  pageTitle2?: string;
   pageSubtitle?: string;
   pageDescription?: string;
   imgSrc?: string;
@@ -15,68 +15,48 @@ export interface PageIntroProps {
 export default function PageIntro({
   pageName,
   pageTitle,
-  pageSubtitle,
+  pageTitle2,
   pageDescription,
   imgSrc,
-  children,
-  containerWidth = "md:max-w-4xl lg:max-w-7xl",
 }: PageIntroProps) {
   return (
-    <>
-      <section className="flex justify-center items-center bg-offWhite pb-12 relative">
-        <div className="absolute right-0 bottom-0 opacity-50 lg:opacity-70 pointer-events-none ">
-          <Image
-            src={"/DotsPattern.svg"}
-            alt="Pattern"
-            width={500}
-            height={450}
-          />
-        </div>
-        <Container>
-          <div className={`${containerWidth} space-y-4 `}>
-            {pageName && (
-              <p
-                className={`${fonts.instrument} text-sm lg:text-base text-primaryBlue font-semibold`}
-              >
-                {pageName}
-              </p>
-            )}
-            <h1
-              className={`${fonts.gilda} text-3xl md:text-5xl 2xl:text-6xl md:leading-[46px] lg:leading-tight text-primaryBlue whitespace-pre-line`}
+    <section className="relative bg-primaryBlue pt-32 pb-16 md:pt-40 md:pb-20 lg:pt-44 lg:pb-20 h-[85vh]">
+      <div className="max-w-[88rem] mx-auto px-6 md:px-12 lg:px-16">
+        {/* Text Content */}
+        <div className="mb-12 md:mb-16 lg:mb-12 max-w-7xl ">
+          <h1
+            className={`${fonts.forum} text-4xl md:text-5xl lg:text-6xl xl:text-[5rem] text-white leading-tight mb-3 md:mb-5`}
+          >
+            {pageTitle ? pageTitle : pageName}
+          </h1>
+          {pageTitle2 && (
+            <h2
+              className={`${fonts.instrument} text-white text-xl md:text-2xl lg:text-[1.75rem] font-medium leading-tight mb-3 md:mb-5 max-w-6xl`}
             >
-              {pageTitle.replace(/\\n/g, "\n")}
-            </h1>
-            {pageSubtitle && (
-              <h3
-                className={`${fonts.inter} text-base md:text-xl lg:text-xl font-medium text-primaryBlue whitespace-pre-line`}
-              >
-                {pageSubtitle}
-              </h3>
-            )}
-            {pageDescription && (
-              <h3
-                className={`${fonts.inter} text-base 2xl:text-lg !leading-6  text-primaryBlue whitespace-pre-line`}
-              >
-                {pageDescription.replace(/\\n/g, "\n")}
-              </h3>
-            )}
-            {children}
-          </div>
-        </Container>
-      </section>
-      {imgSrc && (
-        <section className="flex justify-center items-center bg-white">
-          <Container>
+              {pageTitle2}
+            </h2>
+          )}
+          {pageDescription && (
+            <p className={`${fonts.dm} text-white text-base md:text-lg lg:text-xl leading-relaxed max-w-3xl`}>
+              {pageDescription}
+            </p>
+          )}
+        </div>
+
+        {/* Team Image - Overlapping */}
+        {imgSrc && (
+          <div className="relative w-full -mb-48 md:-mb-56 lg:-mb-80">
             <Image
-              className="w-full h-auto"
               src={decodeURI(imgSrc)}
-              alt={`${pageName ?? "Banner"}`}
-              width={1440}
-              height={500}
+              alt={pageName || "Banner"}
+              width={1200}
+              height={600}
+              className="w-full h-auto shadow-xl"
+              priority
             />
-          </Container>
-        </section>
-      )}
-    </>
+          </div>
+        )}
+      </div>
+    </section>
   );
 }

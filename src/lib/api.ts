@@ -27,7 +27,8 @@ export async function fetchPageIntro(
         cache: "no-store", // Ensures fresh data on every request
       }
     );
-
+      console.log("response", response);
+      console.log("api", `${API_URL}/api/banners?filters[slug][$eq]=${slug}&populate=*`);
     if (!response.ok) {
       const data = await response.json();
       console.log(data);
@@ -73,7 +74,7 @@ export async function fetchAllServices(): Promise<AllServiceResponse[] | null> {
     const jsonData: { data: AllServiceResponse[] } = await response.json();
     const services = jsonData.data.map((service) => ({
       name: service.name,
-      slug: `/services/${service.slug}`,
+      slug: service.slug,
       description: service.description,
       image1: { url: `${API_URL}${service.image1.url}` },
     }));

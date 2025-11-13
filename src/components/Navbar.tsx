@@ -10,9 +10,10 @@ import { Navitem } from "@/constants/Navigation";
 
 interface NavbarProps {
   navitems: Navitem[];
+  transparent?: boolean;
 }
 
-export default function Navbar({ navitems }: NavbarProps) {
+export default function Navbar({ navitems, transparent = false }: NavbarProps) {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openSubmenuIndex, setOpenSubmenuIndex] = useState<number | null>(null);
@@ -25,8 +26,14 @@ export default function Navbar({ navitems }: NavbarProps) {
     setOpenSubmenuIndex(openSubmenuIndex === index ? null : index);
   };
 
+  const navBgClass = transparent ? "bg-transparent" : "bg-offWhite";
+  const textColorClass = transparent ? "text-white" : "text-primaryBlue";
+  const hoverColorClass = transparent ? "hover:text-white/80" : "hover:text-primaryBlue/80";
+  const borderColorClass = transparent ? "border-white/30" : "border-primaryBlue";
+  const logoFilterClass = transparent ? "brightness-0 invert" : "";
+
   return (
-    <div className="flex justify-center items-center bg-offWhite z-10">
+    <div className={`flex justify-center items-center ${navBgClass} z-50 ${transparent ? 'absolute top-0 left-0 right-0' : ''}`}>
       <Container className="w-full">
         <nav className=" py-6 lg:py-10 relative">
           {/* Desktop Navigation */}
@@ -35,11 +42,11 @@ export default function Navbar({ navitems }: NavbarProps) {
 
             <Link href={"/"} className="flex items-center gap-4">
               <Image
-                src={"/Logo.svg"}
+                src="/Logo.svg"
                 alt="Logo"
                 width={280}
                 height={50}
-                className="w-[200px] sm:w-[240px] xl:w-[330px] h-auto"
+                className={`w-[200px] sm:w-[240px] xl:w-[330px] h-auto ${logoFilterClass}`}
               />
             </Link>
             {/* NavItems */}
@@ -50,7 +57,7 @@ export default function Navbar({ navitems }: NavbarProps) {
                     {item.href ? (
                       <Link
                         href={item.href}
-                        className={`flex justify-center items-center gap-x-[1px] text-primaryBlue hover:text-primaryBlue/80 transition-colors duration-200 ease-in-out text-base ${fonts.inter}`}
+                        className={`flex justify-center items-center gap-x-[1px] ${textColorClass} ${hoverColorClass} transition-colors duration-200 ease-in-out text-base ${fonts.inter}`}
                       >
                         {item.name}
                         {item.submenu && (
@@ -61,7 +68,7 @@ export default function Navbar({ navitems }: NavbarProps) {
                       </Link>
                     ) : (
                       <p
-                        className={`flex justify-center items-center gap-x-[1px] text-primaryBlue hover:text-primaryBlue/80 transition-colors duration-200 ease-in-out text-base cursor-pointer ${fonts.inter}`}
+                        className={`flex justify-center items-center gap-x-[1px] ${textColorClass} ${hoverColorClass} transition-colors duration-200 ease-in-out text-base cursor-pointer ${fonts.inter}`}
                         onMouseEnter={() =>
                           setHoveredIndex(index === hoveredIndex ? null : index)
                         }
@@ -113,16 +120,10 @@ export default function Navbar({ navitems }: NavbarProps) {
                   </li>
                 ))}
               </ul>
+              
             </div>
             {/* Contact Btn */}
-            <div>
-              <Link
-                href={"/contact"}
-                className={`bg-primaryBlue hover:bg-primaryBlue/90 transition-colors duration-300 ease-in-out text-white text-base py-4 px-8 ${fonts.inter}`}
-              >
-                Contact us
-              </Link>
-            </div>
+            
           </div>
 
           {/* Mobile Navigation */}
@@ -263,12 +264,7 @@ export default function Navbar({ navitems }: NavbarProps) {
             )}
           </AnimatePresence>
 
-          {/* Established Text (visible on desktop) */}
-          <div className=" space-y-0 w-full mt-4 lg:mt-7 border-b border-primaryBlue py-2">
-            <p className={`${fonts.instrument} font-semibold text-primaryBlue`}>
-              Established 2011
-            </p>
-          </div>
+       
         </nav>
       </Container>
     </div>

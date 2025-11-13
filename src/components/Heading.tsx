@@ -8,7 +8,7 @@ interface HeadingProps {
 export default function Heading({ children, style }: HeadingProps) {
   return (
     <p
-      className={`${fonts.gilda} text-primaryBlue text-[2rem] md:text-[2.25rem] lg:text-[2.625rem] md:leading-[3.125rem] 2xl:text-[2.25rem] 2xl:leading-tight leading-tight ${style}`}
+      className={`${fonts.forum} text-primaryBlue text-[2rem] md:text-[2.25rem] lg:text-[2.625rem] md:leading-[3.125rem] 2xl:text-[2.625rem] 2xl:leading-tight leading-tight ${style}`}
     >
       {children}
     </p>

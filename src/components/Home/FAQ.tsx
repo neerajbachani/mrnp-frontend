@@ -20,17 +20,17 @@ export default function FAQCompinent({ faqs }: FAQProps) {
   const [activeFaqMobile, setActiveFaqMobile] = useState<number | null>(0);
 
   return (
-    <section className="bg-white flex justify-center items-center py-12  lg:py-24">
+    <section className="bg-white flex justify-center items-center py-12  lg:py-12">
       <Container className="flex flex-col items-center">
-        <div className="flex flex-col items-start lg:items-center space-y-6 text-start lg:text-center lg:max-w-lg py-8">
-          <p className={`${fonts.gilda} text-primaryBlue text-2xl uppercase`}>
+        <div className="flex flex-col items-start lg:items-center space-y-4 text-start lg:text-center lg:max-w-5xl py-8">
+          <p className={`${fonts.instrument} text-primaryBlue text-2xl font-medium`}>
             Frequently Asked Question
           </p>
-          <Heading>Commonly Asked Queries About Services.</Heading>
-          <Bodytext>
+          <Heading >Commonly Asked Queries About Services.</Heading>
+          <p className={`${fonts.instrument} text-[#191919] text-lg max-w-xl`}>
             From inquiries about our services and pricing to general financial
             inquiries, we&apos;ve compiled a comprehensive list of FAQs.
-          </Bodytext>
+          </p>
         </div>
         {/* FAQ for large screen */}
         <div className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-8  w-full py-6">
@@ -40,8 +40,8 @@ export default function FAQCompinent({ faqs }: FAQProps) {
               <div
                 key={index}
                 onClick={() => setActiveFaq(index)}
-                className={` flex px-4 py-7  justify-between items-center  cursor-pointer hover:bg-offWhite/50 transition-all duration-300 ease-in-out border-b-[1px] border-[#CDD4DB] ${
-                  activeFaq === index && "bg-offWhite border"
+                className={` flex px-4 py-7  justify-between items-center  cursor-pointer hover:bg-[#F2F5F1]/50 transition-all duration-300 ease-in-out border-b-[1px] border-[#CDD4DB] ${
+                  activeFaq === index && "bg-[#F2F5F1] border"
                 }`}
               >
                 <p className={`${fonts.inter} text-base 2xl:text-lg text-[#191919]`}>
@@ -60,32 +60,34 @@ export default function FAQCompinent({ faqs }: FAQProps) {
           {/* Right Column */}
           <div className="">
             <div className="bg-white border-[1px] border-[#CDD4DB] py-6 px-8 space-y-4">
-              <p className={`${fonts.inter} text-xl font-bold text-[#191919]`}>
+              <p className={`${fonts.instrument} text-2xl font-bold text-[#000000]`}>
                 Answer to the Question
               </p>
-              <Bodytext>{faqs[activeFaq!].answer}</Bodytext>
+              <div className=" pb-20 ">
+                <p className={`${fonts.instrument} text-[#000000] text-base `}>{faqs[activeFaq!].answer}</p>
+              </div>
+              
+              
             </div>
-            <div className="bg-offWhite space-y-8 lg:space-y-0 flex lg:flex-row flex-col border-[1px] border-[#CDD4DB] py-6 px-8 justify-between items-center">
-              <div className="space-y-4">
+            <div className="bg-[#F2F5F1] space-y-8 lg:space-y-0 flex lg:flex-row flex-col border-[1px] border-[#CDD4DB] py-10 px-8 justify-between items-center">
+              <div className="space-y-2">
                 <p
-                  className={`${fonts.inter} text-xl font-bold text-[#191919]`}
+                  className={`${fonts.instrument} text-2xl font-bold text-[#191919]`}
                 >
                   Did not Find Your Questions?
                 </p>
-                <p className={`${fonts.inter} text-lg text-[#191919]`}>
+                <p className={`${fonts.instrument} text-base text-[#000000]`}>
                   Don&apos;t worry! Just send your questions to us.
                 </p>
               </div>
               <div>
-                <button className="bg-primaryBlue ">
+                <button className="bg-primaryBlue rounded-full ">
                   <Link
                     href="/contact"
-                    className="flex items-center  text-white px-8 py-4  justify-center gap-4"
+                    className={` ${fonts.instrument} font-semibold flex items-center  text-white px-8 py-4 text-base  justify-center gap-4`}
                   >
                     Contact Us
-                    <span>
-                      <ArrowRight size={18} />
-                    </span>
+                    
                   </Link>
                 </button>
               </div>
@@ -107,7 +109,7 @@ export default function FAQCompinent({ faqs }: FAQProps) {
                 key={index}
                 className={`flex justify-between items-center p-5 w-full  border-[#CDD4DB] cursor-pointer ${
                   activeFaqMobile === index
-                    ? "bg-offWhite border-[1px]"
+                    ? "bg-[#F2F5F1] border-[1px]"
                     : "bg-white border-b-[1px]"
                 }`}
               >
@@ -154,7 +156,7 @@ export default function FAQCompinent({ faqs }: FAQProps) {
                         },
                       },
                     }}
-                    className="bg-offWhite border border-[#CDD4DB] border-t-0 overflow-hidden"
+                    className="bg-[#F2F5F1] border border-[#CDD4DB] border-t-0 overflow-hidden"
                   >
                     <motion.p
                       initial={{ opacity: 0, y: -10 }}

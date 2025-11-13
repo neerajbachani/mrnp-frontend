@@ -44,8 +44,8 @@ export default function Openings({ openings }: OpeningsProps) {
     <section className="bg-white flex justify-center items-center py-9 lg:py-16">
       <Container>
         <div className="text-center flex flex-col items-center space-y-6">
-          <Heading>Current Openings</Heading>
-          <div className="md:max-w-xl">
+          <Heading style=" uppercase xl:text-5xl 2xl:text-6xl">Current Openings</Heading>
+          <div className="md:max-w-2xl  ">
             <Bodytext>
               Join MRNP and experience a workplace where your contributions
               matter and where integrity and innovation are at the heart of
@@ -57,30 +57,30 @@ export default function Openings({ openings }: OpeningsProps) {
         {/* Desktop Table */}
         <div className="hidden md:block mt-12">
           <table className="w-full">
-            <thead className="bg-offWhite border border-[#d9d9d9]">
+            <thead className="bg-[#F2F5F1] border border-[#d9d9d9]">
               <tr>
                 <th
-                  className={`${fonts.inter} p-4 text-primaryBlue lg:text-2xl font-medium uppercase`}
+                  className={`${fonts.instrument} p-4 text-primaryBlue lg:text-2xl font-medium uppercase`}
                 >
                   Department
                 </th>
                 <th
-                  className={`${fonts.inter} p-4 text-primaryBlue lg:text-2xl font-medium uppercase`}
+                  className={`${fonts.instrument} p-4 text-primaryBlue lg:text-2xl font-medium uppercase`}
                 >
                   Position
                 </th>
                 <th
-                  className={`${fonts.inter} p-4 text-primaryBlue lg:text-2xl font-medium uppercase`}
+                  className={`${fonts.instrument} p-4 text-primaryBlue lg:text-2xl font-medium uppercase`}
                 >
                   City
                 </th>
                 <th
-                  className={`${fonts.inter} p-4 text-primaryBlue lg:text-2xl font-medium uppercase`}
+                  className={`${fonts.instrument} p-4 text-primaryBlue lg:text-2xl font-medium uppercase`}
                 >
                   State
                 </th>
                 <th
-                  className={`${fonts.inter} p-4 text-primaryBlue lg:text-2xl font-medium uppercase`}
+                  className={`${fonts.instrument} p-4 text-primaryBlue lg:text-2xl font-medium uppercase`}
                 >
                   Apply
                 </th>
@@ -127,11 +127,11 @@ export default function Openings({ openings }: OpeningsProps) {
                     <td className="text-center">
                       <button
                         onClick={() => handleApply(opening)}
-                        className={`${fonts.instrument} mx-auto flex justify-between items-center text-white font-semibold bg-primaryBlue px-6 md:px-8 py-3 md:py-4 hover:bg-primaryBlue/90 transition-colors duration-300 ease-in-out w-full md:w-auto`}
+                        className={`${fonts.instrument} text-base mx-auto flex justify-between items-center text-white  bg-primaryBlue px-6 md:px-8 py-3 md:py-4 hover:bg-primaryBlue/90 transition-colors duration-300 ease-in-out w-full md:w-auto rounded-full `}
                       >
-                        Apply
-                        <span className="text-white ml-3">
-                          <ArrowRight />
+                        Apply Now
+                        <span className="text-white ml-3 md:ml-4">
+                          <ArrowRight size={16} />
                         </span>
                       </button>
                     </td>

@@ -17,8 +17,7 @@ export const navitems: Navitem[] = [
   },
   { name: "Life@MRNP", href: "/careers" },
   { name: "Who we serve", href: "/who-we-serve" },
-  {
-    name: "Resources",
-
-  },
+  // {
+  //   name: "Resources",
+  // },
 ];

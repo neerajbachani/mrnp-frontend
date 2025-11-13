@@ -1,22 +1,16 @@
 import FAQCompinent from "@/components/Home/FAQ";
 import FirmInfo from "@/components/Home/FirmInfo";
 import OurServices from "@/components/Home/OurServices";
-import ResourceCarousel from "@/components/Home/ResourceCarousel";
+// import ResourceCarousel from "@/components/Home/ResourceCarousel";
 import WhatWeOffer from "@/components/Home/WhatWeOffer";
-import PageIntro, { PageIntroProps } from "@/components/PageIntro";
+import HeroWithNavbar from "@/components/HeroWithNavbar";
 import {
   fetchAllServices,
   fetchFAQs,
-  fetchFeaturedResources,
-  fetchPageIntro,
+  // fetchFeaturedResources,
 } from "@/lib/api";
 import { Metadata } from "next";
-
-const pageIntroDataFallback: PageIntroProps = {
-  pageTitle: `History of expertise.\nReputation for excellence.`,
-  pageDescription: `Smart approaches to solution with exceptional service. Talent and expertise necessary to meet our clients’ needs in an ever-changing and fast-paced environment.`,
-  imgSrc: "/Home_banner.png",
-};
+import { navitems } from "@/constants/Navigation";
 
 export const metadata: Metadata = {
   title: "Home | MRNP & CO LLP",
@@ -25,16 +19,28 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const pageIntroData: PageIntroProps =
-    (await fetchPageIntro("home")) ?? pageIntroDataFallback;
-
   const services = await fetchAllServices();
   const faqs = await fetchFAQs();
-  const featuredResources = await fetchFeaturedResources();
+  // const featuredResources = await fetchFeaturedResources();
+
+  // Update navitems with services
+  const servicesSubmenu = services?.map((service) => ({
+    name: service.name,
+    href: service.slug,
+  }));
+  navitems.find((item) => item.name === "Services")!.submenu = servicesSubmenu;
 
   return (
     <>
-      <PageIntro {...pageIntroData} />
+      <HeroWithNavbar
+        navitems={navitems}
+        backgroundImage={true}
+        image="/mrnp-hero-bg.svg"
+        title="History of expertise.\nReputation for excellence."
+        description="Smart approaches to solution with exceptional service. Talent and expertise necessary to meet our clients' needs in an ever-changing and fast-paced environment."
+        buttonText="About Us"
+        buttonLink="/about"
+      />
       <FirmInfo />
       {/* {featuredResources && featuredResources.length && (
         <ResourceCarousel resources={featuredResources} />

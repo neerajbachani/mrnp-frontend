@@ -29,7 +29,6 @@ export default function Navbar({ navitems, transparent = false }: NavbarProps) {
   const navBgClass = transparent ? "bg-transparent" : "bg-offWhite";
   const textColorClass = transparent ? "text-white" : "text-primaryBlue";
   const hoverColorClass = transparent ? "hover:text-white/80" : "hover:text-primaryBlue/80";
-  const borderColorClass = transparent ? "border-white/30" : "border-primaryBlue";
   const logoFilterClass = transparent ? "brightness-0 invert" : "";
 
   return (

@@ -1,6 +1,5 @@
 import { fonts } from "@/utils/fonts";
 import Container from "./Container";
-import Image from "next/image";
 
 export interface HeroProps {
   title: string;

@@ -4,9 +4,7 @@ import PageIntro, { PageIntroProps } from "@/components/PageIntro";
 import PageWithNavbar from "@/components/PageWithNavbar";
 import MarqueeComponent from "@/components/Services/Marquee";
 import { fetchAllServices, fetchOpenings, fetchPageIntro } from "@/lib/api";
-import { fonts } from "@/utils/fonts";
 import { Metadata } from "next";
-import Link from "next/link";
 import { navitems } from "@/constants/Navigation";
 
 export const metadata: Metadata = {

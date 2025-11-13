@@ -1,4 +1,5 @@
 import { fonts } from "@/utils/fonts";
+import Image from "next/image";
 
 export default function FirmInfo() {
   return (
@@ -14,9 +15,11 @@ export default function FirmInfo() {
         <div className="flex flex-col md:flex-row items-start justify-center gap-12 md:gap-16 lg:gap-20">
           {/* Left side - SVG */}
           <div className="flex-shrink-0">
-            <img
+            <Image
               src="/14.svg"
               alt="14 Years of Experience"
+              width={257}
+              height={257}
               className="w-[200px] md:w-[180px] lg:w-[257px] h-auto mb-10"
             />
             <p className={`${fonts.forum} text-3xl text-center text-white leading-7 `}>14 Years of Experience</p>

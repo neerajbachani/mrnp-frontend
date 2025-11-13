@@ -3,13 +3,12 @@
 import { fonts } from "@/utils/fonts";
 import Container from "../Container";
 import { useState } from "react";
-import { ArrowRight, Plus } from "lucide-react";
+import { Plus } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 import Heading from "../Heading";
 import { FAQ } from "@/types/Service";
-import Bodytext from "../Bodytext";
 
 interface FAQProps {
   faqs: FAQ[];

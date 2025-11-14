@@ -2,23 +2,11 @@
 
 import { fonts } from "@/utils/fonts";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRef } from "react";
 
 export default function FirmInfo() {
   const sectionRef = useRef<HTMLElement>(null);
-  
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"]
-  });
-
-  // Transform scroll progress to create dramatic light-to-dark shift
-  const lightOpacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.8, 0.5, 0.2, 0]);
-  const darkOpacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.1, 0.2, 0.1, 0.1]);
-  
-  // Shift gradient position on scroll
-  const gradientPosition = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
     <section

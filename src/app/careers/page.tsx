@@ -16,7 +16,7 @@ const pageIntroDataFallback: PageIntroProps = {
   pageTitle: "Join Our Team",
   pageDescription:
     "Students, recent graduates, seasoned professionals, and senior leaders constitute integral pillars of our success.",
-  imgSrc: "/About_banner.png",
+  imgSrc: "/join-our-team.png",
 };
 
 export default async function Careers() {
@@ -33,9 +33,15 @@ export default async function Careers() {
   }));
   navitems.find((item) => item.name === "Services")!.submenu = servicesSubmenu;
 
+  // Always use static fallback image for careers page
+  const careersPageData = {
+    ...pageIntroData,
+    imgSrc: "/join-our-team.png",
+  };
+
   return (
     <PageWithNavbar navitems={navitems} transparentNav={true}>
-      <PageIntro {...pageIntroData} />
+      <PageIntro {...careersPageData} />
       <WorkCulture />
       <MarqueeComponent />
       <Openings openings={openings} />

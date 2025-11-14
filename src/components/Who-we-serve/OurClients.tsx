@@ -14,7 +14,7 @@ export default function OurClients() {
     <section className="w-full  ">
       {/* Stats Section */}
       <div className="w-full bg-[#F2F5F1] border-[#B4B4B4] border-b ">
-        <Container>
+        <div className=" container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 ">
             {stats.map((stat, index) => {
               const isNotLast = index < stats.length - 1;
@@ -36,7 +36,7 @@ export default function OurClients() {
               );
             })}
           </div>
-        </Container>
+        </div>
       </div>
 
       {/* Personalized Approach Section */}

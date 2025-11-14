@@ -42,7 +42,7 @@ export default function OurPeople({ peoples }: OurPeopleProps) {
 
   return (
     <section className="bg-white py-16 md:py-20 lg:py-10">
-      <div className="max-w-[88rem] mx-auto px-6 md:px-12 lg:px-16">
+      <div className="container mx-auto px-6 md:px-12 lg:px-16">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
           <h2
@@ -61,7 +61,7 @@ export default function OurPeople({ peoples }: OurPeopleProps) {
               className="flex flex-col cursor-pointer group"
             >
               {/* Image */}
-              <div className="w-full aspect-[4/3] relative overflow-hidden mb-4 md:mb-6 bg-gray-200">
+              <div className="w-full aspect-[1] relative overflow-hidden mb-4 md:mb-6 bg-gray-200">
                 <Image
                   src={person.image}
                   alt={person.name}

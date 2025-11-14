@@ -42,7 +42,7 @@ export default function Hero({
 
    
       <Container>
-        <div className="relative z-10 max-w-4xl mx-auto text-center space-y-6 mt-10 md:py-40">
+        <div className="relative z-10 max-w-7xl mx-auto text-center space-y-6 mt-10 md:py-40">
           {subtitle && (
             <p
               className={`${fonts.instrument} text-sm lg:text-base text-white font-semibold`}
@@ -52,24 +52,24 @@ export default function Hero({
           )}
 
           <h1
-            className={`${fonts.forum} text-4xl md:text-5xl lg:text-6xl 2xl:text-[5rem] md:leading-tight lg:leading-[5rem] text-white whitespace-pre-line`}
+            className={`${fonts.forum} text-4xl md:text-5xl lg:text-6xl xl:text-[5rem] 2xl:text-[6.5rem] md:leading-tight lg:leading-[5rem] xl:leading-[6.5rem] text-white whitespace-pre-line`}
           >
             {title.replace(/\\n/g, "\n")}
           </h1>
 
           {description && (
             <p
-              className={`${fonts.dm} text-base md:text-lg lg:text-xl text-white/90 max-w-4xl mx-auto whitespace-pre-line leading-relaxed`}
+              className={`${fonts.dm} text-base md:text-lg lg:text-xl xl:text-2xl text-white max-w-5xl mx-auto whitespace-pre-line leading-relaxed`}
             >
               {description.replace(/\\n/g, "\n")}
             </p>
           )}
 
           {buttonText && buttonLink && (
-            <div className="pt-6">
+            <div className="pt-14">
               <a
                 href={buttonLink}
-                className={`${fonts.instrument}  px-10 py-4 bg-[#2A3F76] text-white text-[1rem] font-bold rounded-full hover:bg-primaryBlue/90 `}
+                className={`${fonts.instrument}  px-10 py-4 bg-[#2A3F76] text-white text-sm lg:text-[1rem] xl:text-[1.25rem] font-bold rounded-full hover:bg-primaryBlue/90 `}
               >
                 {buttonText}
               </a>

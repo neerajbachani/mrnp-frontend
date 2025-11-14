@@ -13,7 +13,6 @@ export const navitems: Navitem[] = [
   { name: "About MRNP", href: "/about" },
   {
     name: "Services",
-    
   },
   { name: "Life@MRNP", href: "/careers" },
   { name: "Who we serve", href: "/who-we-serve" },

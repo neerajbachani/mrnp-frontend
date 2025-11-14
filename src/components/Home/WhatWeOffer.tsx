@@ -44,7 +44,7 @@ export default function WhatWeOffer() {
       <div className="absolute inset-0 "></div>
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-[86rem] mx-auto px-6 md:px-12 lg:px-16">
+      <div className="relative z-10 w-full container mx-auto px-6 md:px-12 lg:px-16">
         {/* Header */}
         <div className="mb-12 md:mb-16 lg:mb-20 max-w-4xl">
           <p

@@ -49,7 +49,7 @@ const ourValues: OurValuesProps[] = [
 export default function OurValues() {
   return (
     <section className="bg-white py-16 md:py-20 lg:py-24">
-      <div className="max-w-[88rem] mx-auto px-6 md:px-4 ">
+      <div className="container mx-auto px-6 md:px-4 ">
         {/* Header Section */}
         <div className="text-center mb-12 md:mb-16 lg:mb-20 max-w-3xl mx-auto">
           <h2

@@ -68,7 +68,7 @@ export default async function RootLayout({
 
   const servicesSubmenu = services?.map((service) => ({
     name: service.name,
-    href: service.slug,
+    href: `/services/${service.slug}`,
   }));
 
   // const resourcesSubmenu = resources?.map((resource) => ({

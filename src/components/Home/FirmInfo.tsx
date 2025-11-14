@@ -27,13 +27,13 @@ export default function FirmInfo() {
       style={{ backgroundImage: "url('/the-firm-bg.png')" }}
     >
       {/* Animated gradient overlays - Light overlay that fades out */}
-      <motion.div 
+      {/* <motion.div 
         className="absolute inset-0 bg-gradient-to-br from-white/40 via-white/10 to-transparent"
         style={{ opacity: lightOpacity }}
-      />
+      /> */}
       
       {/* Dark overlay that intensifies and shifts position */}
-      <motion.div 
+      {/* <motion.div 
         className="absolute inset-0"
         style={{ 
           opacity: darkOpacity,
@@ -42,7 +42,7 @@ export default function FirmInfo() {
             (pos) => `linear-gradient(135deg, transparent ${pos}, rgba(0,0,0,0.5) ${pos}, rgba(0,0,0,0.85) 100%)`
           )
         }}
-      />
+      /> */}
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
@@ -67,7 +67,7 @@ export default function FirmInfo() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+              transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
               className={`${fonts.forum} text-3xl text-center text-white leading-7`}
             >
               Years of Experience
@@ -80,7 +80,7 @@ export default function FirmInfo() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.7, delay: 0.5, ease: "easeOut" }}
+              transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
               className={`${fonts.instrument} text-xs md:text-sm lg:text-2xl uppercase tracking-widest`}
             >
               The Firm
@@ -89,7 +89,7 @@ export default function FirmInfo() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: 0.7, ease: "easeOut" }}
+              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
               className={`${fonts.forum} text-2xl md:text-3xl lg:text-4xl xl:text-5xl leading-tight`}
             >
               Empowering Financial Growth and Stability.
@@ -98,7 +98,7 @@ export default function FirmInfo() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: 0.9, ease: "easeOut" }}
+              transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
               className={`${fonts.instrument} text-sm md:text-base lg:text-lg leading-relaxed text-white`}
             >
               MRNP & CO LLP is a dynamic Chartered Accountant firm with a

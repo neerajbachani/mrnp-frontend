@@ -48,7 +48,7 @@ export default function OurLocationGlobe() {
     rings: 1,
     maxRings: 3,
     initialPosition: { lat: selectedLocation.lat, lng: selectedLocation.lng },
-    autoRotate: true,
+    autoRotate: false,
     autoRotateSpeed: 0.9,
   };
 

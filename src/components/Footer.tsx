@@ -12,95 +12,104 @@ export default function Footer({ navitems }: FooterProps) {
   const year = new Date().getFullYear();
   return (
     <footer className="bg-primaryBlue flex justify-center items-center">
-      <Container className="flex flex-col justify-center items-center py-8 md:py-9 lg:py-[42px] ">
-        <div className="w-full space-y-12 lg:space-x-20 lg:space-y-0 flex flex-col lg:flex-row justify-between items-start py-6">
-          <div>
-            <Image
-              src={"/Logo_Footer.png"}
-              alt="Logo"
-              width={300}
-              height={300}
-            />
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 xl:gap-12">
-            <div className="space-y-2 lg:space-y-4">
-              <p className={`${fonts.inter} text-lg text-[#c8c8c8] font-bold`}>
-                Company
-              </p>
-              <div className="space-y-2 flex flex-col">
-                {navitems.map(
-                  (item, index) =>
-                    item.href && (
-                      <Link
-                        key={index}
-                        className={`${fonts.inter} text-white`}
-                        href={item.href}
-                      >
-                        {item.name}
-                      </Link>
-                    )
-                )}
-              </div>
-            </div>
-            <div className="space-y-4">
-              <p className={`${fonts.inter} text-lg text-[#c8c8c8] font-bold`}>
-                Services
-              </p>
-              <div className="space-y-2 flex flex-col">
-                {navitems.map(
-                  (item) =>
-                    item.name === "Services" &&
-                    item.submenu?.length &&
-                    item.submenu.map((subitem, index) => (
-                      <Link
-                        key={index}
-                        className={`${fonts.inter} text-white`}
-                        href={subitem.href}
-                      >
-                        {subitem.name}
-                      </Link>
-                    ))
-                )}
-              </div>
-            </div>
-            <div className="space-y-4">
-              <p className={`${fonts.inter} text-lg text-[#c8c8c8] font-bold`}>
-                Stay Connected
-              </p>
-              <div className="space-y-2 flex flex-col">
-                <Link href={"#"} className={`${fonts.inter} text-white`}>
-                  Facebook
-                </Link>
-                <Link href={"#"} className={`${fonts.inter} text-white`}>
-                  Twitter / X
-                </Link>
-                <Link href={"#"} className={`${fonts.inter} text-white`}>
-                  LinkedIn
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-        <span className="w-full h-[1px] my-4 lg:my-8 bg-white" />
-        <div
-          className={`flex flex-col lg:flex-row w-full justify-between items-center ${fonts.inter} text-xs text-white  text-center lg:text-start space-y-2 lg:space-y-0`}
-        >
-          <p className="text-white text-sm">
-            &copy; {year} MRNP. All rights reserved.
-          </p>
-          <p className="flex items-center justify-center space-x-2 text-sm">
-            <span>Design and Developed</span>
-            <a href="http://agnescreative.agency/" target="_blank">
+      <Container>
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-0">
+          {/* Logo and Description Section */}
+          <div className="py-12 md:py-16 lg:py-20 lg:pr-12 flex flex-col justify-between relative">
+            <div>
               <Image
-                quality={100}
-                width={50}
+                src={"/logo-footer.svg"}
+                alt="Logo"
+                width={300}
                 height={50}
-                alt="Agnes"
-                src={"/Agnes.png"}
-                className="rounded-md"
+                className="mb-6"
               />
-            </a>
-          </p>
+              <p className={`${fonts.instrument} text-xs text-white leading-relaxed max-w-xs mb-8`}>
+                MRNP & CO LLP focus on providing tailor-made solutions to the challenging problems of our clients and perform with high-quality and timely service.
+              </p>
+            </div>
+            <div className={`${fonts.instrument} text-xs text-white`}>
+              <p>&copy; {year} MRNP. All rights reserved.</p>
+              <p className="mt-2">Design and Developed @ Agnes Creative</p>
+            </div>
+            {/* Border */}
+            <div className="hidden lg:block absolute right-0 top-0 h-full w-px bg-white/10" />
+          </div>
+
+          {/* Company Section */}
+          <div className="py-12 md:py-16 lg:py-20 lg:px-12 relative">
+            <h3 className={`${fonts.inter} text-base font-semibold text-white mb-6 uppercase tracking-wider`}>
+              Company
+            </h3>
+            <div className="space-y-3 flex flex-col">
+              {navitems.map(
+                (item, index) =>
+                  item.href && (
+                    <Link
+                      key={index}
+                      className={`${fonts.inter} text-sm text-gray-300 hover:text-white transition-colors`}
+                      href={item.href}
+                    >
+                      {item.name}
+                    </Link>
+                  )
+              )}
+            </div>
+            {/* Border */}
+            <div className="hidden lg:block absolute right-0 top-0 h-full w-px bg-white/10" />
+          </div>
+
+          {/* Services Section */}
+          <div className="py-12 md:py-16 lg:py-20 lg:px-12 relative">
+            <h3 className={`${fonts.inter} text-base font-semibold text-white mb-6 uppercase tracking-wider`}>
+              Services
+            </h3>
+            <div className="space-y-3 flex flex-col">
+              {navitems.map(
+                (item) =>
+                  item.name === "Services" &&
+                  item.submenu?.length &&
+                  item.submenu.map((subitem, index) => (
+                    <Link
+                      key={index}
+                      className={`${fonts.inter} text-sm text-gray-300 hover:text-white transition-colors`}
+                      href={subitem.href}
+                    >
+                      {subitem.name}
+                    </Link>
+                  ))
+              )}
+            </div>
+            {/* Border */}
+            <div className="hidden lg:block absolute right-0 top-0 h-full w-px bg-white/10" />
+          </div>
+
+          {/* Stay Connected Section */}
+          <div className="py-12 md:py-16 lg:py-20 lg:pl-12">
+            <h3 className={`${fonts.inter} text-base font-semibold text-white mb-6 uppercase tracking-wider`}>
+              Stay Connected
+            </h3>
+            <div className="space-y-3 flex flex-col">
+              <Link 
+                href={"#"} 
+                className={`${fonts.inter} text-sm text-gray-300 hover:text-white transition-colors`}
+              >
+                Facebook
+              </Link>
+              <Link 
+                href={"#"} 
+                className={`${fonts.inter} text-sm text-gray-300 hover:text-white transition-colors`}
+              >
+                Twitter / X
+              </Link>
+              <Link 
+                href={"#"} 
+                className={`${fonts.inter} text-sm text-gray-300 hover:text-white transition-colors`}
+              >
+                LinkedIn
+              </Link>
+            </div>
+          </div>
         </div>
       </Container>
     </footer>

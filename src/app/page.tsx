@@ -27,7 +27,7 @@ export default async function Home() {
   // Update navitems with services
   const servicesSubmenu = services?.map((service) => ({
     name: service.name,
-    href: service.slug,
+    href: `/services/${service.slug}`,
   }));
   navitems.find((item) => item.name === "Services")!.submenu = servicesSubmenu;
 

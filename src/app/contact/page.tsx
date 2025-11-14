@@ -24,7 +24,7 @@ export default async function Contact() {
   const services = await fetchAllServices();
   const servicesSubmenu = services?.map((service) => ({
     name: service.name,
-    href: service.slug,
+    href: `/services/${service.slug}`,
   }));
   navitems.find((item) => item.name === "Services")!.submenu = servicesSubmenu;
 

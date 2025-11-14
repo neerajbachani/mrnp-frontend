@@ -3,6 +3,7 @@ import "./globals.css";
 import HelpBanner from "@/components/HelpBanner";
 import Footer from "@/components/Footer";
 import DisclaimerModal from "@/components/DisclaimerModal";
+import SmoothScroll from "@/components/SmoothScroll";
 import { navitems } from "@/constants/Navigation";
 import { fetchAllServices } from "@/lib/api";
 
@@ -82,6 +83,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body>
+        <SmoothScroll />
         <DisclaimerModal />
         <main className="">{children}</main>
         <HelpBanner />

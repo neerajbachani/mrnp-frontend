@@ -11,7 +11,7 @@ interface WhyMRNPProps {
 export default function WhyMRNP({ serviceTitle, chooseMRNP }: WhyMRNPProps) {
   return (
     <section className="bg-offWhite py-10 md:py-14 lg:py-20 flex items-center justify-center">
-      <Container className="flex flex-col items-center justify-center space-y-10">
+      <div className=" container flex flex-col items-center justify-center space-y-10">
         <div className="text-center lg:max-w-[80%] flex flex-col items-center justify-center space-y-3">
           <Heading>Why Choose MRNP & CO LLP for {serviceTitle}?</Heading>
           <p
@@ -40,7 +40,7 @@ export default function WhyMRNP({ serviceTitle, chooseMRNP }: WhyMRNPProps) {
             </div>
           ))}
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

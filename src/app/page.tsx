@@ -11,6 +11,7 @@ import {
 } from "@/lib/api";
 import { Metadata } from "next";
 import { navitems } from "@/constants/Navigation";
+import OurLocationGlobe from "@/components/Home/OurLocationGlobe";
 
 export const metadata: Metadata = {
   title: "Home | MRNP & CO LLP",
@@ -46,6 +47,7 @@ export default async function Home() {
         <ResourceCarousel resources={featuredResources} />
       )} */}
       {services && services.length > 0 && <OurServices services={services} />}
+      <OurLocationGlobe />
       <WhatWeOffer />
       {faqs && faqs.length > 0 && <FAQCompinent faqs={faqs} />}
     </>

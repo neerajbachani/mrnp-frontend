@@ -1,5 +1,7 @@
+"use client";
 import { fonts } from "@/utils/fonts";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 interface OurValuesProps {
   title: string;
@@ -52,16 +54,26 @@ export default function OurValues() {
       <div className="container mx-auto px-6 md:px-4 ">
         {/* Header Section */}
         <div className="text-center mb-12 md:mb-16 lg:mb-20 max-w-3xl mx-auto">
-          <h2
+          <motion.h2
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
             className={`${fonts.forum} text-3xl md:text-4xl lg:text-5xl text-primaryBlue mb-6 md:mb-3`}
           >
             Our Values
-          </h2>
-          <p className={`${fonts.dm} text-base md:text-lg leading-relaxed`}>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
+            className={`${fonts.dm} text-base md:text-lg leading-relaxed`}
+          >
             At MRNP & Co. LLP, our values aren&apos;t just words on
             paper—they&apos;re the essence of how we do business and interact
             with our clients every day:
-          </p>
+          </motion.p>
         </div>
 
         {/* Values Grid with Borders */}
@@ -71,11 +83,24 @@ export default function OurValues() {
             const isNotLastRow = index < ourValues.length - 2;
 
             return (
-              <div key={index} className="relative">
+              <motion.div
+                key={index}
+                className="relative"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
                 {/* Value Content */}
                 <div className="p-8 md:p-10 lg:p-12 space-y-4 md:space-y-6">
-                  {/* Icon */}
-                  <div className="w-16 h-16 md:w-16 md:h-16">
+                  {/* Icon - Animates from top to bottom */}
+                  <motion.div
+                    className="w-16 h-16 md:w-16 md:h-16"
+                    initial={{ opacity: 0, y: -30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+                  >
                     <Image
                       src={value.icon}
                       alt={value.title}
@@ -83,31 +108,53 @@ export default function OurValues() {
                       height={64}
                       className="w-full h-full object-contain"
                     />
-                  </div>
+                  </motion.div>
 
-                  {/* Title */}
-                  <h3
+                  {/* Title - Animates from bottom to top */}
+                  <motion.h3
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.6, delay: index * 0.1 + 0.2, ease: "easeOut" }}
                     className={`${fonts.instrument} font-medium text-2xl md:text-3xl text-primaryBlue`}
                   >
                     {value.title}
-                  </h3>
+                  </motion.h3>
 
-                  {/* Description */}
-                  <p className={`${fonts.dm} text-[#191919] text-base md:text-lg leading-relaxed`}>
+                  {/* Description - Animates from bottom to top */}
+                  <motion.p
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.6, delay: index * 0.1 + 0.3, ease: "easeOut" }}
+                    className={`${fonts.dm} text-[#191919] text-base md:text-lg leading-relaxed`}
+                  >
                     {value.description}
-                  </p>
+                  </motion.p>
                 </div>
 
-                {/* Vertical Border - Only for left column cards on desktop */}
+                {/* Vertical Border - Expands from center vertically */}
                 {isLeftColumn && (
-                  <div className="absolute bottom-8 right-0 top-8 hidden w-px bg-gray-300 lg:block" />
+                  <motion.div
+                    className="absolute bottom-8 right-0 top-8 hidden w-px bg-gray-300 lg:block origin-center"
+                    initial={{ scaleY: 0 }}
+                    whileInView={{ scaleY: 1 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.8, delay: index * 0.1 + 0.3, ease: "easeOut" }}
+                  />
                 )}
 
-                {/* Horizontal Border - Full width after each row except last */}
+                {/* Horizontal Border - Expands from center horizontally */}
                 {isNotLastRow && (
-                  <div className="absolute bottom-0 left-0 right-0 h-px bg-gray-300" />
+                  <motion.div
+                    className="absolute bottom-0 left-0 right-0 h-px bg-gray-300 origin-center"
+                    initial={{ scaleX: 0 }}
+                    whileInView={{ scaleX: 1 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.8, delay: index * 0.1 + 0.5, ease: "easeOut" }}
+                  />
                 )}
-              </div>
+              </motion.div>
             );
           })}
         </div>

@@ -40,7 +40,7 @@ export default function OurClients() {
       </div>
 
       {/* Personalized Approach Section */}
-      <Container className="py-12 lg:py-16">
+      <Container className="py-12 lg:py-16 mx-auto">
         <h2 className={`${fonts.forum} text-3xl lg:text-5xl text-primaryBlue mb-6`}>
           Personalized Approach :
         </h2>

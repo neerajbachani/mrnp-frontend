@@ -30,7 +30,9 @@ export default function Footer({ navitems }: FooterProps) {
             </div>
             <div className={`${fonts.instrument} text-xs text-white`}>
               <p>&copy; {year} MRNP. All rights reserved.</p>
-              <p className="mt-2">Design and Developed @ Agnes Creative</p>
+              <p className="mt-2">Design and Developed @ <span> 
+                <Link href={"https://agnescreative.agency/"} target="_blank" rel="noreferrer">Agnes Creative</Link>
+                </span></p>
             </div>
             {/* Border */}
             <div className="hidden lg:block absolute right-0 top-0 h-full w-px bg-white/10" />

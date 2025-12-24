@@ -3,7 +3,7 @@ import Image from "next/image";
 import Container from "./Container";
 import { fonts } from "@/utils/fonts";
 import Link from "next/link";
-import { ChevronDown, X } from "lucide-react";
+import { ChevronDown, X, Menu } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { Navitem } from "@/constants/Navigation";
@@ -133,12 +133,8 @@ export default function Navbar({ navitems, transparent = false }: NavbarProps) {
                 onClick={toggleMobileMenu}
                 className="focus:outline-none"
               >
-                <Image
-                  src="/icons/menu.svg"
-                  alt="Menu"
-                  width={24}
-                  height={24}
-                  className="w-6 h-6 lg:w-8 lg:h-8 brightness-0 invert"
+                <Menu 
+                  className="w-6 h-6 lg:w-8 lg:h-8 text-white" 
                 />
               </button>
             </div>
@@ -148,12 +144,8 @@ export default function Navbar({ navitems, transparent = false }: NavbarProps) {
               onClick={toggleMobileMenu}
               className="lg:hidden focus:outline-none"
             >
-              <Image
-                src="/icons/menu.svg"
-                alt="Menu"
-                width={24}
-                height={24}
-                className="w-6 h-6 brightness-0 invert"
+              <Menu 
+                className="w-6 h-6 text-white" 
               />
             </button>
           </div>

@@ -166,7 +166,7 @@ export default function Navbar({ navitems, transparent = false }: NavbarProps) {
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95, y: -20 }}
                   transition={{ type: "spring", duration: 0.4, bounce: 0.1 }}
-                  className="fixed top-8 right-4 sm:right-8 md:right-12 lg:right-20 w-[90%] sm:w-[400px] lg:w-[37%]  bg-white rounded-3xl shadow-2xl z-50 overflow-hidden"
+                  className="fixed top-8 right-4 sm:right-8 md:right-12 lg:right-24 w-[90%] sm:w-[400px] lg:w-[32%]  bg-white rounded-3xl shadow-2xl z-50 overflow-hidden"
                 >
                   <div className="flex flex-col min-h-[400px] max-h-[80vh]">
                     {/* Close Button */}

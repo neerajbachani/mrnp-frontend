@@ -66,7 +66,7 @@ export default function OurPeople({ peoples }: OurPeopleProps) {
                   src={person.image}
                   alt={person.name}
                   fill
-                  className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition duration-500 ease-in-out w-[400px] h-[300px]"
+                  className="object-contain grayscale group-hover:grayscale-0 group-hover:scale-105 transition duration-500 ease-in-out w-[400px] h-[300px]"
                   
                 />
               </div>

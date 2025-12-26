@@ -61,7 +61,7 @@ export default function OurPeople({ peoples }: OurPeopleProps) {
               className="flex flex-col cursor-pointer group"
             >
               {/* Image */}
-              <div className="w-full aspect-[1] relative overflow-hidden mb-4 md:mb-6 bg-gray-200">
+              <div className="w-full aspect-[5/6] relative overflow-hidden mb-4 md:mb-6 bg-gray-200">
                 <Image
                   src={person.image}
                   alt={person.name}

@@ -29,11 +29,11 @@ export default function OurLocations() {
               <div
                 key={location.city}
                 className="space-y-3"
-                onClick={() => setSelectedLocation(index)}
               >
                 {/* City name */}
                 <h3
-                  className={`${fonts.instrument} text-2xl lg:text-[1.75rem] font-medium text-primaryBlue`}
+                  className={`${fonts.instrument} cursor-pointer text-2xl lg:text-[1.75rem] font-medium text-primaryBlue`}
+                  onClick={() => setSelectedLocation(index)}
                 >
                   {location.city}
                 </h3>
@@ -48,7 +48,7 @@ export default function OurLocations() {
                 {/* Contact button */}
                 <div className="flex gap-2 items-center">
                   <div
-                    className="flex items-center gap-3 px-6 py-2 border-2 border-[#B4B4B4] rounded-full hover:border-primaryBlue transition-all duration-300 group"
+                    className="flex items-center gap-3 px-6 py-2 border-2 border-[#B4B4B4] rounded-full hover:border-primaryBlue transition-all duration-300 group cursor-pointer"
                     onClick={() => setSelectedLocation(index)}
                   >
                     <span className={`${fonts.instrument} text-base lg:text-lg `}>
@@ -56,7 +56,9 @@ export default function OurLocations() {
                       {location.email}
                     </span>
                   </div>
-                  <div className={`p-3 rounded-full border border-[#B4B4B4] transition-all duration-300 ${
+                  <div 
+                    onClick={() => setSelectedLocation(index)}
+                    className={`p-3 rounded-full border border-[#B4B4B4] cursor-pointer transition-all duration-300 ${
                     selectedLocation === index 
                       ? 'bg-primaryBlue' 
                       : 'bg-white text-primaryBlue hover:bg-primaryBlue'

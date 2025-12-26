@@ -1,12 +1,19 @@
 "use client";
 
 import { fonts } from "@/utils/fonts";
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 export default function FirmInfo() {
   const sectionRef = useRef<HTMLElement>(null);
+
+  const [yearsOfExperience, setYearsOfExperience] = useState(14); // Default to current experience
+
+  useEffect(() => {
+    const foundingYear = 2011;
+    const currentYear = new Date().getFullYear();
+    setYearsOfExperience(currentYear - foundingYear);
+  }, []);
 
   return (
     <section
@@ -43,13 +50,11 @@ export default function FirmInfo() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <Image
-                src="/14.svg"
-                alt="14 Years of Experience"
-                width={257}
-                height={257}
-                className="w-[200px] md:w-[180px] lg:w-[257px] h-auto mb-10"
-              />
+              <div 
+                className={`${fonts.gilda} text-white text-[150px] md:text-[180px] lg:text-[257px] leading-none text-center mb-6`}
+              >
+                {yearsOfExperience}
+              </div>
             </motion.div>
             <motion.p 
               initial={{ opacity: 0, y: 30 }}
@@ -90,8 +95,8 @@ export default function FirmInfo() {
               className={`${fonts.instrument} text-sm md:text-base lg:text-lg leading-relaxed text-white`}
             >
               MRNP & CO LLP is a dynamic Chartered Accountant firm with a
-              robust presence across multiple states, including Bengaluru,
-              Raipur, Surat, Vadodara, Gandhidham, and Bhuj. Founded in 2011 by
+              robust presence across multiple states, including Bangalore,
+              Ahmedabad, Surat, Vadodara, Raipur, Gandhidham, and Bhuj. Founded in 2011 by
               a team of young, enthusiastic, and highly skilled professionals,
               the firm brings extensive experience from top consulting firms to
               every engagement.
